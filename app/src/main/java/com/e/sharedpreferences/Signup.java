@@ -36,7 +36,7 @@ public class Signup extends AppCompatActivity {
             SharedPreferences.Editor editor=sharedPreferences.edit();
 
             String pass1=etPassword.getText().toString();
-            String pass2=etConfirmPassword.getText().toString();
+            String pass2=etConfirmPassword.getText().toString();             
 
 
             if(pass1==pass2){
