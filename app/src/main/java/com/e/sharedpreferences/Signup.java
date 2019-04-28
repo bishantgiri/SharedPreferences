@@ -25,12 +25,12 @@ public class Signup extends AppCompatActivity {
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SignUp();
+                Register();
             }
         });
     }
 
-    private Void SignUp(){
+    private void Register(){
 
             SharedPreferences sharedPreferences=getSharedPreferences("User",MODE_PRIVATE);
             SharedPreferences.Editor editor=sharedPreferences.edit();
@@ -45,7 +45,8 @@ public class Signup extends AppCompatActivity {
                 editor.commit();
 
                 Toast.makeText(this,"Registerd Successfully",Toast.LENGTH_SHORT).show();
-            }else{
+            }
+            else{
                   Toast.makeText(this,"Password Doesn't Match",Toast.LENGTH_SHORT).show();
             }
 
