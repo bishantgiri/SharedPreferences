@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class Signup extends AppCompatActivity {
     private Button btnSignup;
-    private EditText etUsername, etPassword, etConfirmPassword;
+    private EditText etUsername, etPasswordSign, etConfirmPassword;
 
 
     @Override
@@ -18,8 +18,8 @@ public class Signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         etUsername = findViewById(R.id.etUsername);
-        etPassword = findViewById(R.id.etPassword);
-        etConfirmPassword = findViewById(R.id.etConfirmPassword);
+        etPasswordSign = findViewById(R.id.etPasswordSignup);
+        etConfirmPassword = findViewById(R.id.etConfirmPasswordSignUp);
         btnSignup = findViewById(R.id.btnSignUp);
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
@@ -31,20 +31,18 @@ public class Signup extends AppCompatActivity {
     }
 
     private void Register(){
+            String pass1=etPasswordSign.getText().toString();
+            String pass2=etConfirmPassword.getText().toString();
 
             SharedPreferences sharedPreferences=getSharedPreferences("User",MODE_PRIVATE);
             SharedPreferences.Editor editor=sharedPreferences.edit();
 
-            String pass1=etPassword.getText().toString();
-            String pass2=etConfirmPassword.getText().toString();             
-
-
-            if(pass1==pass2){
+            if(pass1.equals(pass2)){
                 editor.putString("username",etUsername.getText().toString());
-                editor.putString("password",etPassword.getText().toString());
+                editor.putString("password",etPasswordSign.getText().toString());
                 editor.commit();
 
-                Toast.makeText(this,"Registerd Successfully",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Successfully Registered",Toast.LENGTH_SHORT).show();
             }
             else{
                   Toast.makeText(this,"Password Doesn't Match",Toast.LENGTH_SHORT).show();

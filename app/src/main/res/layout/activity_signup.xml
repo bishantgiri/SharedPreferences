@@ -13,12 +13,12 @@
         android:layout_height="wrap_content"
         android:hint="Choose Username"/>
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etPasswordSignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Create Password"/>
     <EditText
-        android:id="@+id/etConfirmPassword"
+        android:id="@+id/etConfirmPasswordSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Confirm Password"/>

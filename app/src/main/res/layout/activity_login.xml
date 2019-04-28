@@ -9,12 +9,12 @@
 
 
     <EditText
-        android:id="@+id/etUser"
+        android:id="@+id/etUser_Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Username"/>
     <EditText
-        android:id="@+id/etPass"
+        android:id="@+id/etPass_Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Password"/>
