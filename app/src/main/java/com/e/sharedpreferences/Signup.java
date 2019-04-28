@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class Signup extends AppCompatActivity {
     private Button btnSignup;
-    private EditText etUsername,etPassword,etConfirmPassword;
+    private EditText etUsername, etPassword, etConfirmPassword;
 
 
     @Override
@@ -29,7 +29,9 @@ public class Signup extends AppCompatActivity {
             }
         });
     }
+
     private Void SignUp(){
+
             SharedPreferences sharedPreferences=getSharedPreferences("User",MODE_PRIVATE);
             SharedPreferences.Editor editor=sharedPreferences.edit();
 
@@ -43,6 +45,8 @@ public class Signup extends AppCompatActivity {
                 editor.commit();
 
                 Toast.makeText(this,"Registerd Successfully",Toast.LENGTH_SHORT).show();
+            }else{
+                  Toast.makeText(this,"Password Doesn't Match",Toast.LENGTH_SHORT).show();
             }
 
     }
