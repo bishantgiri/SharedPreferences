@@ -20,7 +20,7 @@ public class Login extends AppCompatActivity {
 
 
         etUsername_Login=findViewById(R.id.etUser_Login);
-        etUsername_Login=findViewById(R.id.etPass_Login);
+        etPassword_Login=findViewById(R.id.etPass_Login);
         btnSignup_Login = findViewById(R.id.signUp_login);
         btnLogin=findViewById(R.id.btnLogin);
 
@@ -41,12 +41,13 @@ public class Login extends AppCompatActivity {
         });
     }
     private void checkUser(){
-        SharedPreferences sharedPreferences=getSharedPreferences("user",MODE_PRIVATE);
-        String username=sharedPreferences.getString("username","");
-        String password=sharedPreferences.getString("password","");
-
-        if(username.equals(etUsername_Login.getText().toString()) ||
-        password.equals(etPassword_Login.getText().toString()))
+        SharedPreferences sharedPreferences=getSharedPreferences("User",MODE_PRIVATE);
+        String usernam=sharedPreferences.getString("username","");
+        String passwor=sharedPreferences.getString("password","");
+        String uname =etUsername_Login.getText().toString();
+        String passw =etPassword_Login.getText().toString();
+        if(usernam.equals(uname) ||
+        passwor.equals(passw))
         {
             Toast.makeText(Login.this,"Welcome",Toast.LENGTH_SHORT).show();
 
